@@ -1,8 +1,17 @@
-let randomNumber = Math.floor(Math.random()*100 +1);
+let randomNumber ;
 
 let intoNumber = document.getElementById("intoNumber");
 
 let message = document.getElementById("message");
+
+function startGame(){
+    randomNumber = Math.floor(Math.random()*100 +1) ;
+    message.textContent = "";
+    intoNumber.value= ""
+    intoNumber.disabled = false;
+}
+
+window.onload(startGame())
 
 function checkDate(){
 
@@ -18,6 +27,8 @@ function checkDate(){
         message.textContent = `Lo lograste, el numero correcto es ${randomNumber}`;
         message.style.color = 'green';
         intoNumber.disabled = true;
+        
+        
     }else if(joinNumber > randomNumber){
         message.textContent = 'Es un numero mayor, vuelve a intentar';
         message.style.color = 'red';
@@ -26,3 +37,4 @@ function checkDate(){
         message.style.color = 'red';
     }
 }
+

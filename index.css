@@ -15,3 +15,7 @@ button{
     padding: 2px;
     font-size: 25px;
 }
+
+#startGame{
+    background: #00fb;
+}
